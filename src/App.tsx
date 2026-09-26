@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform, AnimatePresence, useSpring } from "framer-motion";
-import { 
+import {
   ArrowRight, Activity, Flame, Calculator,
-   Mail, MessageCircle, MapPin, Languages, Award
+  Mail, MessageCircle, MapPin, Languages, Award
 } from "lucide-react";
 import "./App.css";
 
@@ -43,7 +43,6 @@ function AnimatedStat({ value, suffix = "", label }: { value: number; suffix?: s
 
   useEffect(() => {
     // A simple timeout-based animation for stat numbers when mounted
-    let start = 0;
     const duration = 1500;
     const startTime = performance.now();
 
@@ -62,7 +61,7 @@ function AnimatedStat({ value, suffix = "", label }: { value: number; suffix?: s
   }, [value]);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -78,8 +77,8 @@ function RowList({ rows }: { rows: Row[] }) {
   return (
     <div className="list-rows">
       {rows.map((r, i) => (
-        <motion.div 
-          className="row" 
+        <motion.div
+          className="row"
           key={r.title}
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -227,9 +226,9 @@ export default function App() {
 
   return (
     <>
-      <motion.div 
-        className="glow" 
-        style={{ left: mouseX, top: mouseY }} 
+      <motion.div
+        className="glow"
+        style={{ left: mouseX, top: mouseY }}
       />
 
       <header className={`nav ${scrolled ? 'hide' : ''}`}>
@@ -240,17 +239,17 @@ export default function App() {
       </header>
 
       <section className="hero">
-        <motion.img 
-          style={{ y: heroY }} 
-          className="hero-img" 
-          src={heroImg} 
-          alt="Ajmal Ali, certified personal trainer, flexing in the gym" 
+        <motion.img
+          style={{ y: heroY }}
+          className="hero-img"
+          src={heroImg}
+          alt="Ajmal Ali, certified personal trainer, flexing in the gym"
         />
         <div className="hero-fade" />
         <motion.div style={{ opacity: heroOpacity }} className="hero-content">
-          <motion.div 
-            initial={{ opacity: 0, y: 15 }} 
-            animate={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="eyebrow"
           >
@@ -259,30 +258,30 @@ export default function App() {
           </motion.div>
           <h1 className="display">
             <span className="line">
-              <motion.span initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ delay: 0.2, duration: 0.8, ease: [0.2,0.8,0.2,1] }}>
+              <motion.span initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ delay: 0.2, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}>
                 BUILT BY
               </motion.span>
             </span>
             <span className="line">
-              <motion.span initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ delay: 0.35, duration: 0.8, ease: [0.2,0.8,0.2,1] }}>
+              <motion.span initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ delay: 0.35, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}>
                 DISCIPLINE
               </motion.span>
             </span>
           </h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }}
             className="hero-sub"
           >
             Personal training, fat-loss transformations and strength coaching from a REPS India registered trainer. Real programs, real accountability, real results.
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9, duration: 0.8 }}
             className="hero-badges"
           >
             <span><MapPin size={16} /> Online coaching — anyone, anywhere</span>
             <span><Award size={16} /> Affordable, no-nonsense pricing</span>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.0, duration: 0.8 }}
             className="hero-actions"
           >
@@ -300,7 +299,7 @@ export default function App() {
         <AnimatedStat value={4} suffix="+" label="Certifications" />
         <AnimatedStat value={450} suffix="hrs" label="Formal training" />
         <AnimatedStat value={4} label="Languages spoken" />
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="stat"
         >
@@ -318,7 +317,7 @@ export default function App() {
 
       <section className="wrap">
         <div className="about-grid">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95, rotate: -2 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -327,34 +326,34 @@ export default function App() {
           >
             <img src={backImg} alt="Ajmal Ali back double biceps pose" />
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="about-text"
           >
-            <div className="kicker"><Flame size={16}/> The coach</div>
+            <div className="kicker"><Flame size={16} /> The coach</div>
             <h2 className="display">Trained. Certified. Built for your goals.</h2>
             <p>Ajmal Ali is a REPS India registered Category A Personal Trainer based in Kollam, Kerala, holding a Diploma in Personal Training from Leaders Fitness Academy and a Government-recognised General Fitness Trainer qualification under the Skill India / NCVET framework.</p>
             <p>Beyond the weight room, he's trained in trauma response and emergency care through the Australian Lifesaving Academy, NSW — so every session is coached with both intensity and safety in mind. Training in person in Kollam, or online — he coaches clients from anywhere in the world.</p>
             <div className="lang-row">
-              <span><Languages size={14}/> English</span>
-              <span><Languages size={14}/> Malayalam</span>
-              <span><Languages size={14}/> Tamil</span>
-              <span><Languages size={14}/> Hindi</span>
+              <span><Languages size={14} /> English</span>
+              <span><Languages size={14} /> Malayalam</span>
+              <span><Languages size={14} /> Tamil</span>
+              <span><Languages size={14} /> Hindi</span>
             </div>
           </motion.div>
         </div>
       </section>
 
       <section className="wrap" id="certs">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <div className="kicker"><Award size={16}/> Credentials</div>
+          <div className="kicker"><Award size={16} /> Credentials</div>
           <h2 className="display">Every certification, verified.</h2>
           <p className="section-sub">Four recognised qualifications across training, nutrition guidance and emergency response.</p>
         </motion.div>
@@ -362,12 +361,12 @@ export default function App() {
       </section>
 
       <section className="wrap">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <div className="kicker"><Activity size={16}/> What you get</div>
+          <div className="kicker"><Activity size={16} /> What you get</div>
           <h2 className="display">Coaching built around you, not a template.</h2>
           <p className="section-sub">Sessions are priced to stay affordable — honest coaching, no inflated packages. Train in Kollam or online from anywhere in the world.</p>
         </motion.div>
@@ -380,11 +379,11 @@ export default function App() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <div className="kicker"><MapPin size={16}/> In the gym</div>
+          <div className="kicker"><MapPin size={16} /> In the gym</div>
           <h2 className="display">This is what the work looks like.</h2>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -400,15 +399,15 @@ export default function App() {
       </section>
 
       <section className="wrap">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 40 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
           className="diet"
         >
-          <div className="kicker"><Activity size={16}/> Nutrition philosophy</div>
-          <h2 className="display">Training gets you there.<br/>Food keeps you there.</h2>
+          <div className="kicker"><Activity size={16} /> Nutrition philosophy</div>
+          <h2 className="display">Training gets you there.<br />Food keeps you there.</h2>
           <div className="diet-grid">
             <div className="diet-col">
               <h4>Every plan is built around</h4>
@@ -433,21 +432,21 @@ export default function App() {
       </section>
 
       <section className="wrap">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
           className="calc"
         >
-          <div className="kicker"><Calculator size={16}/> Try it yourself</div>
+          <div className="kicker"><Calculator size={16} /> Try it yourself</div>
           <h2 className="display">Know your numbers before you DM.</h2>
           <MacroCalculator />
         </motion.div>
       </section>
 
       <section className="wrap" id="contact">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -460,10 +459,10 @@ export default function App() {
             <p>DM to book your first session, ask about online coaching, or check pricing — wherever you're training from.</p>
             <div className="btns">
               <a className="btn btn-flame" href="https://wa.me/917306057936" target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={20}/> WhatsApp: +91 73060 57936
+                <MessageCircle size={20} /> WhatsApp: +91 73060 57936
               </a>
               <a className="btn btn-outline" href="mailto:ajmalaliedamon@gmail.com">
-                <Mail size={20}/> Email me
+                <Mail size={20} /> Email me
               </a>
             </div>
           </div>
