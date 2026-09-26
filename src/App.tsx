@@ -455,7 +455,7 @@ export default function App() {
         >
           <div>
             <div className="display">TRAIN WITH</div>
-            <h2 className="display">AJMAL ALI</h2>
+            <h2 className="display" >AJMAL ALI</h2>
             <p>DM to book your first session, ask about online coaching, or check pricing — wherever you're training from.</p>
             <div className="btns">
               <a className="btn btn-flame" href="https://wa.me/917306057936" target="_blank" rel="noopener noreferrer">
